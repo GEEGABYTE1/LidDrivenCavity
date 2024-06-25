@@ -2,7 +2,7 @@
 # Lid Driven Cavity Incompressible Navier Stokes Equation Solution
 
 <div align="center">
-  <img src="./Content/image1.png" width="600" height="400" />
+  <img src="./content/image1.png" width="600" height="400" />
 </div>
 
 
@@ -38,7 +38,7 @@ where:
  The box will start the simulation as a Homogenuous Dirichlet Boundary Condition as seen below : 
 
 <div align="center">
-  <img src="./Content/image2.png" width="400" height="300" />
+  <img src="./content/image2.png" width="400" height="300" />
 </div>
 
 There are also a few assumptions we will make:
@@ -51,12 +51,21 @@ by external flow.
 The solution is inspired by the Projection Method, or in other words, *Chorin's Splitting*.
 
 The simulation starts off by setting velocities as:
+
 $$ u = [u, v]$$
+
 $$ x = [x, y]$$
 
 1) The simulation solves the Momentum Equation without a Pressure Gradient for tentative velocity given boundary conditions:
 
 $$\frac{\partial u}{\partial t} + (u \cdot \nabla) \cdot u = \nu \nabla^{2}\cdot u $$
+
+$$\frac{\partial u}{\partial t} + u \cdot \frac{\partial u}{\partial x} + v \cdot \frac{\partial u}{\partial y} = \nu \frac{\partial^{2}u}{\partial x^{2}} + \nu \cdot \frac{\partial^{2}u}{\partial y^{2}}$$
+
+
+
+$$\frac{\partial u}{\partial t} + u \cdot \frac{\partial u}{\partial x} + v \cdot \frac{\partial u}{\partial y} = \nu \frac{\partial^{2}v}{\partial x^{2}} + \nu \cdot \frac{\partial^{2}v}{\partial y^{2}}$$
+
 
 
 
