@@ -73,16 +73,25 @@ $$\nabla^{2}\rho = \frac{\rho}{\Delta t} \nabla \cdot u $$
 $$\frac{\partial^{2}\rho}{\partial x^{2}} + \frac{\partial^{2}\rho}{\partial y^{2}} = \frac{\rho}{\Delta t} (\frac{\partial y}{\partial x} + \frac{\partial v}{\partial y}) $$
 
 
+3) In the end of the iteration for each grid point across the grid, the sim will correct the velocities and enforce again the Velocity Boundary Conditions:
+
+$$ u = u - \frac{\Delta t}{\rho} \cdot \nabla \cdot \rho $$ 
+
+or more explicitly,
+
+$$ u = u - \frac{\Delta t}{\rho} \frac{\partial \rho}{\partial x}$$
+
+$$v = v - \frac{\Delta t}{\rho} \frac{\partial \rho}{\partial y}$$
+
 
 
 
 ## things to consider
 
-a) The simulation only does one Euler-Step which can lead to inaccuracies and instability. May require multiple Euler-Steps that include backtracking multiple steps .
+a) The Variables can be played around in the second cell, but can lead to instability where the solution may not be accurate. There is error handling setup if that occurs.
+b) Expected Solution: Swirling of fluid
 
-b) All parameters can be chosen arbitrarily. And thus, the simulation is unstable because the advection may not work correctly depending on the values you give it. This goes back to the fact that self-advection may backtrack to a places that may be unusual or even worse, outside the grid. 
 
-c) To view the timestamps of the simulation, view `StableFluid.ipynb` on the last cell. 100 iterations have been of the simulation modelling behaviour over time.
 
 
 ## Inspiration
