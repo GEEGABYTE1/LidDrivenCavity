@@ -18,7 +18,7 @@ Section describes the equations and method used to write up the simulation.
 
 The solution is based off Navier Stokes Equation particularly:
 
-$$\frac{\partial u}{\partial t} + (u \cdot \nabla)u = \frac{-1}{\rho} \cdot \nabla \rho + \nu \cdot \nabla^{2}u + f $$
+$$\frac{\partial u}{\partial t} + (u \cdot \nabla)u = \frac{-1}{\rho} \cdot \nabla p + \nu \cdot \nabla^{2}u + f $$
 
 Incompressibility Equation in the simulation is based on:
 
