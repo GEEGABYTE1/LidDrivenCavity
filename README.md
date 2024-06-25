@@ -88,8 +88,9 @@ $$v = v - \frac{\Delta t}{\rho} \frac{\partial \rho}{\partial y}$$
 
 ## things to consider
 
-a) The Variables can be played around in the second cell, but can lead to instability where the solution may not be accurate. There is error handling setup if that occurs.
-b) Expected Solution: Swirling of fluid
+- a) The Variables can be played around in the second cell, but can lead to instability where the solution may not be accurate. There is error handling setup if that occurs.
+- b) Expected Solution: Swirling of fluid
+- c) Solution can be found at the end of notebook `LidDrivenCavity.ipynb`
 
 
 
