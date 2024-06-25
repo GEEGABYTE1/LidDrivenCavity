@@ -66,6 +66,11 @@ $$\frac{\partial u}{\partial t} + u \cdot \frac{\partial u}{\partial x} + v \cdo
 
 $$\frac{\partial u}{\partial t} + u \cdot \frac{\partial u}{\partial x} + v \cdot \frac{\partial u}{\partial y} = \nu \frac{\partial^{2}v}{\partial x^{2}} + \nu \cdot \frac{\partial^{2}v}{\partial y^{2}}$$
 
+2) The simulation will then move on to solving the Pressure Poission Equation for pressure at the next point in time with homogeneous Boundary Conditions everywhere except at the top where it is homogeneous Dirichlet:
+
+$$\nabla^{2}\rho = \frac{\rho}{\Delta t} \nabla \cdot u $$
+
+$$\frac{\partial^{2}\rho}{\partial x^{2}} + \frac{\partial^{2}\rho}{\partial y^{2}} = \frac{\rho}{\Delta t} (\frac{\partial y}{\partial x} + \frac{\partial v}{\partial y}) $$
 
 
 
