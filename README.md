@@ -68,20 +68,20 @@ $$\frac{\partial u}{\partial t} + u \cdot \frac{\partial u}{\partial x} + v \cdo
 
 2) The simulation will then move on to solving the Pressure Poission Equation for pressure at the next point in time with homogeneous Boundary Conditions everywhere except at the top where it is homogeneous Dirichlet:
 
-$$\nabla^{2}\rho = \frac{\rho}{\Delta t} \nabla \cdot u $$
+$$\nabla^{2}p = \frac{\rho}{\Delta t} \nabla \cdot u $$
 
-$$\frac{\partial^{2}\rho}{\partial x^{2}} + \frac{\partial^{2}\rho}{\partial y^{2}} = \frac{\rho}{\Delta t} (\frac{\partial y}{\partial x} + \frac{\partial v}{\partial y}) $$
+$$\frac{\partial^{2}p}{\partial x^{2}} + \frac{\partial^{2}p}{\partial y^{2}} = \frac{\rho}{\Delta t} (\frac{\partial y}{\partial x} + \frac{\partial v}{\partial y}) $$
 
 
 3) In the end of the iteration for each grid point across the grid, the sim will correct the velocities and enforce again the Velocity Boundary Conditions:
 
-$$ u = u - \frac{\Delta t}{\rho} \cdot \nabla \cdot \rho $$ 
+$$ u = u - \frac{\Delta t}{\rho} \cdot \nabla \cdot p $$ 
 
 or more explicitly,
 
-$$ u = u - \frac{\Delta t}{\rho} \frac{\partial \rho}{\partial x}$$
+$$ u = u - \frac{\Delta t}{\rho} \frac{\partial p}{\partial x}$$
 
-$$v = v - \frac{\Delta t}{\rho} \frac{\partial \rho}{\partial y}$$
+$$v = v - \frac{\Delta t}{\rho} \frac{\partial p}{\partial y}$$
 
 
 
